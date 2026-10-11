@@ -10,18 +10,25 @@ El ecosistema implementa un diseño híbrido standalone compuesto por dos capas 
 ## 📁 Estructura del Repositorio
 ```text
 ├── data/
-│   └── datalake_experimento/      # Data Lake standalone localizado
-│       ├── raw/                   # Zona cruda: Dataset masivo original (CSV)
-│       └── curado/                # Zona optimizada: Particiones físicas (Parquet)
-├── docs/
-│   └── dashboard_crediavanza.pbix # Capa de presentación y analítica visual
-├── src/
-│   ├── sql/
-│   │   ├── 01_ddl_estructura_dw.sql   # Definición de estructuras de datos e integridad
-│   │   └── 02_etl_automatizacion_sp.sql # Procedimiento almacenado de automatización ETL
-│   └── python/
-│       └── 04_experimento_masivo_1m.py  # Pipeline masivo de estrés analítico (1M filas)
-└── README.md                      # Documentación principal del repositorio
+│   └── datalake_experimento/      # Almacenamiento Big Data (Data Lake Standalone)
+│       ├── raw/                   # Zona Cruda: Dataset original y de control (CSV)
+│       │   └── transacciones_credito.csv
+│       └── curado/                # Zona Optimizada: Bloques Parquet particionados por riesgo
+│           ├── nivel_riesgo=ALTO/
+│           ├── nivel_riesgo=BAJO/
+│           ├── nivel_riesgo=CRÍTICO/
+│           └── nivel_riesgo=MEDIO/
+├── docs/                          # Capa de documentación técnica de presentación
+│   └── dashboard_crediavanza.pbix.txt # Bitácora de empaquetado del cuadro de mando
+├── src/                           # Código fuente del ecosistema híbrido
+│   ├── python/                    # Capa analítica masiva y pipelines en memoria
+│   │   ├── 04_experimento_masivo_1m.py
+│   │   └── pipeline_big_data.py
+│   └── sql/                       # Capa relacional y automatización ETL dimensional
+│       ├── Automatización del Proceso ETL (Stored Procedure).sql
+│       ├── Creación de Objetos y Estructura Física (DDL).sql
+│       └── Inyección de un volumen controlado de datos... .sql
+└── README.md                      # Manual técnico de despliegue y auditoría ABET
 ```
 
 ## 🛠️ Instrucciones de Despliegue y Ejecución
