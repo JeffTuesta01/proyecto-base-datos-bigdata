@@ -1,0 +1,9 @@
+Aviso de Despliegue de Infraestructura Analítica:
+El archivo binario ejecutable original de Power BI ('dashboard_crediavanza.pbix') 
+registra un peso físico de 43.2 MB, superando el umbral de latencia de carga 
+directa permitida por la interfaz web standalone de GitHub. 
+
+Para garantizar la reproducibilidad y auditoría del proyecto, la versión funcional 
+del cuadro de mando interactivo gerencial ha sido empaquetada y referenciada 
+mediante capturas de pantalla de alta resolución a color en la Sección 5.2.3 
+del Informe Principal y en el Anexo E del documento técnico unificado.
